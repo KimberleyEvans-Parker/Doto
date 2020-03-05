@@ -1,0 +1,38 @@
+.right-side-bar {
+    border-radius: 79px 0px 0px 0px;
+    height: 100vh;
+    margin-top: 10px;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.right-side-bg-green {
+    background-color: #a5d6a7;
+}
+
+.right-side-bg-blue {
+    background-color: #8d6cd9;
+}
+
+#input-field {
+    width: 250px;
+    margin-left: 10vw;
+    margin-top: 4vh;
+    text-align: left;
+}
+
+.profile-photo {
+    width: 150px;
+    margin-left: 10vw;
+    margin-top: 4vh;
+    height: 150px;
+}
+
+#color-palette {
+    margin-top: 3vh;
+    height: 40px;
+    margin-left: 2vw;
+    border-radius: 50px 50px 50px 50px;
+}
