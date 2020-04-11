@@ -47,8 +47,6 @@ const useStyles = makeStyles(theme => ({
 const Calendar = () => {
     var pointRef = React.createRef();
 
-    var points = 0;
-
     const classes = useStyles();
     const [listView, setListView] = useState();
     const [tasks, setTasks] = useState([]);
@@ -122,10 +120,9 @@ const Calendar = () => {
                     </Tooltip>
                 </div>
                 <div>
-                    <Avatar id="aert" className={classes.blue}>
-                        {points}
+                    <Avatar className={classes.blue}>
+                        <Points ref={pointRef} id="points_id" />
                     </Avatar>
-                    <Points ref={pointRef} id="points_id" />
                 </div>
             </div>
             <span className="content-container">

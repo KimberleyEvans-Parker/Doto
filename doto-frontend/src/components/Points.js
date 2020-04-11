@@ -19,16 +19,13 @@ class Points extends React.Component {
     render() {
         return (
             <div>
-                <h2>Counter</h2>
-                <div>
-                    <span>{this.state.points}</span>
-                    <button
-                        style={{ display: "none" }}
-                        onClick={change => {
-                            this.changePoints(change);
-                        }}
-                    />
-                </div>
+                <span>{this.state.points}</span>
+                <button
+                    style={{ display: "none" }}
+                    onClick={change => {
+                        this.changePoints(change);
+                    }}
+                />
             </div>
         );
     }
