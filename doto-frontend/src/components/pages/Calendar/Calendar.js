@@ -86,9 +86,14 @@ const Calendar = () => {
     const handleTaskStatusUpdated = taskId => {
         const newTasks = [...tasks];
         const taskToUpdate = newTasks.find(task => task.taskId === taskId);
-        // taskToUpdate.isComplete ? pointRef.current.changePoints(-taskToUpdate.duration) : pointRef.current.changePoints(taskToUpdate.duration);
-        taskToUpdate.isComplete ? pointRef.current.changePoints(-1) : pointRef.current.changePoints(1);
         console.log(taskToUpdate.duration);
+        if (taskToUpdate.duration) {
+            taskToUpdate.isComplete
+                ? pointRef.current.changePoints(-taskToUpdate.duration)
+                : pointRef.current.changePoints(taskToUpdate.duration);
+        } else {
+            taskToUpdate.isComplete ? pointRef.current.changePoints(-1) : pointRef.current.changePoints(1);
+        }
         taskToUpdate.isComplete = !taskToUpdate.isComplete;
         DotoService.updateTask(taskToUpdate);
         setTasks(newTasks);
@@ -120,6 +125,7 @@ const Calendar = () => {
                     </Tooltip>
                 </div>
                 <div>
+                    <h2>Points</h2>
                     <Avatar className={classes.blue}>
                         <Points ref={pointRef} id="points_id" />
                     </Avatar>
