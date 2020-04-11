@@ -82,18 +82,15 @@ const Calendar = () => {
         handleClose();
     };
 
-    // function handleTaskStatusUpdated(taskId) {
     const handleTaskStatusUpdated = taskId => {
         const newTasks = [...tasks];
         const taskToUpdate = newTasks.find(task => task.taskId === taskId);
-        console.log(taskToUpdate.duration);
-        if (taskToUpdate.duration) {
-            taskToUpdate.isComplete
-                ? pointRef.current.changePoints(-taskToUpdate.duration)
-                : pointRef.current.changePoints(taskToUpdate.duration);
-        } else {
-            taskToUpdate.isComplete ? pointRef.current.changePoints(-1) : pointRef.current.changePoints(1);
-        }
+        // if duration is passed in, use that, otherwise calculate it from start and end dates
+        const minutes = taskToUpdate.duration
+            ? taskToUpdate.duration
+            : Math.abs(taskToUpdate.startDate - taskToUpdate.endDate) / 1000 / 60;
+        // if task is completed, increase points, otherwise, decrease points
+        taskToUpdate.isComplete ? pointRef.current.changePoints(-minutes) : pointRef.current.changePoints(minutes);
         taskToUpdate.isComplete = !taskToUpdate.isComplete;
         DotoService.updateTask(taskToUpdate);
         setTasks(newTasks);

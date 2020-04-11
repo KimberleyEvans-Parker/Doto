@@ -1,6 +1,5 @@
 import React from "react";
 
-// const Points = (state = initialState) => {
 class Points extends React.Component {
     constructor(props) {
         super(props);
