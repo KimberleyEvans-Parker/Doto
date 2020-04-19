@@ -55,7 +55,7 @@ class Streak extends React.Component {
             <div>
                 <h2>Streak</h2>
                 <div className="streak-container">
-                    <img src={streakImage} width="55em" />
+                    <img src={streakImage} width="55em" alt={`streak: ${this.state.points}`} />
                     <span className="centered">{this.state.points}</span>
                 </div>
             </div>
