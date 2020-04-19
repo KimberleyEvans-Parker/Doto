@@ -1,4 +1,5 @@
 import React from "react";
+import Avatar from "@material-ui/core/Avatar";
 
 class Points extends React.Component {
     constructor(props) {
@@ -13,15 +14,13 @@ class Points extends React.Component {
         });
     }
 
-    // resetPoints() {
-    //     this.state.points = 0;
-    //     console.log("RESET", this.state.points);
-    // }
-
     render() {
         return (
             <div>
-                <span>{this.state.points}</span>
+                <h2>Points</h2>
+                <Avatar className={this.props.avatarClass}>
+                    <span>{this.state.points}</span>
+                </Avatar>
             </div>
         );
     }
