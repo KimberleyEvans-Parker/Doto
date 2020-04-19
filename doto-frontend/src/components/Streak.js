@@ -1,26 +1,22 @@
 import React from "react";
 import streakImage from "./images/streak.png";
 
-class Points extends React.Component {
+class Streak extends React.Component {
     constructor(props) {
         super(props);
         this.state = { points: 0 };
     }
 
-    changePoints(change) {
-        console.log(change);
+    incrementStreak(change) {
         this.setState({
             points: this.state.points + change,
         });
-
-        console.log(this.state.points);
     }
 
-    resetPoints() {
+    resetStreak() {
         this.setState({
             points: 0,
         });
-        console.log("RESET", this.state.points);
     }
 
     updateStreak() {
@@ -39,21 +35,15 @@ class Points extends React.Component {
         });
 
         // Steak = sum the values of every task completed since then
-        this.resetPoints();
+        this.resetStreak();
         this.props.tasks.forEach(task => {
             if (!currentDateTime || task.endDate < currentDateTime) {
                 if (task.startDate >= latestDate) {
-                    this.changePoints(1);
+                    this.incrementStreak(1);
                     console.log("^", task.title);
                 }
             }
         });
-    }
-
-    tick() {
-        this.setState(state => ({
-            seconds: state.seconds + 1,
-        }));
     }
 
     componentDidMount() {
@@ -73,4 +63,4 @@ class Points extends React.Component {
     }
 }
 
-export default Points;
+export default Streak;
