@@ -11,20 +11,17 @@ class Points extends React.Component {
         this.setState({
             points: this.state.points + change,
         });
-
-        console.log(this.state.points);
     }
+
+    // resetPoints() {
+    //     this.state.points = 0;
+    //     console.log("RESET", this.state.points);
+    // }
 
     render() {
         return (
             <div>
                 <span>{this.state.points}</span>
-                <button
-                    style={{ display: "none" }}
-                    onClick={change => {
-                        this.changePoints(change);
-                    }}
-                />
             </div>
         );
     }
