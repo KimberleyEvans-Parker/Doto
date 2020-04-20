@@ -41,12 +41,6 @@
     position: relative;
     box-shadow: black;
 }
-
-.shadow {
-    box-shadow: black;
-    text-shadow: black;
-    border-radius: 50%;
-    /* border: 2px solid #fff; */
   
 .footer-container {
     display: flex;
