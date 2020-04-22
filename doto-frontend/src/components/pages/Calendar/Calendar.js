@@ -187,6 +187,20 @@ const Calendar = () => {
                         </Fab>
                     </Tooltip>
                 </div>
+                <div className="mb-3">
+                    <Tooltip title="View Your Stats">
+                        <Fab onClick={handleStatsOpen} size="small">
+                            <PieChartIcon />
+                        </Fab>
+                    </Tooltip>
+                </div>
+                <div className="mb-3">
+                    <Tooltip title="Productivity Score View">
+                        <Fab onClick={handleIsScoreOpen} size="small">
+                            <ScoreIcon />
+                        </Fab>
+                    </Tooltip>
+                </div>
             </div>
             <span className="content-container">
                 <Header title="Calendar" />
