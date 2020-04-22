@@ -10,7 +10,7 @@ import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import ScoreIcon from "@material-ui/icons/Score";
 import AddIcon from "@material-ui/icons/Add";
-import PieChartIcon from "@material-ui/icons/PieChart"
+import PieChartIcon from "@material-ui/icons/PieChart";
 import ModalContent from "../../ModalContent";
 import Points from "../../Points";
 import Streak from "../../Streak";
@@ -89,7 +89,7 @@ const Calendar = () => {
         } else {
             setStatsOpen(true);
         }
-    }
+    };
 
     useEffect(() => {
         const fetchTasks = async () => {
@@ -167,39 +167,25 @@ const Calendar = () => {
                         </Fab>
                     </Tooltip>
                 </div>
+                <div className="mb-3">
+                    <Tooltip title="View Your Stats">
+                        <Fab onClick={handleStatsOpen} size="small">
+                            <PieChartIcon />
+                        </Fab>
+                    </Tooltip>
+                </div>
+                <div className="mb-3">
+                    <Tooltip title="Productivity Score View">
+                        <Fab onClick={handleIsScoreOpen} size="small">
+                            <ScoreIcon />
+                        </Fab>
+                    </Tooltip>
+                </div>
                 <div>
                     <Points ref={pointRef} avatarClass={classes.blue} />
                 </div>
                 <div>
                     <Streak tasks={[...tasks]} ref={streakRef} />
-                </div>
-                <div className="mb-3">
-                    <Tooltip title="View Your Stats">
-                        <Fab onClick={handleStatsOpen} size="small">
-                            <PieChartIcon />
-                        </Fab>
-                    </Tooltip>
-                </div>
-                <div className="mb-3">
-                    <Tooltip title="Productivity Score View">
-                        <Fab onClick={handleIsScoreOpen} size="small">
-                            <ScoreIcon />
-                        </Fab>
-                    </Tooltip>
-                </div>
-                <div className="mb-3">
-                    <Tooltip title="View Your Stats">
-                        <Fab onClick={handleStatsOpen} size="small">
-                            <PieChartIcon />
-                        </Fab>
-                    </Tooltip>
-                </div>
-                <div className="mb-3">
-                    <Tooltip title="Productivity Score View">
-                        <Fab onClick={handleIsScoreOpen} size="small">
-                            <ScoreIcon />
-                        </Fab>
-                    </Tooltip>
                 </div>
             </div>
             <span className="content-container">
@@ -250,12 +236,12 @@ const Calendar = () => {
                             <UserStats
                                 modalBackground={theme}
                                 // TODO: get real values for these.
-                                tasksCompleted='5'
-                                hoursWorked='10.5'
-                                dayRecord='4'
-                                highTasks='2'
-                                medTasks='2'
-                                lowTasks='1'
+                                tasksCompleted="5"
+                                hoursWorked="10.5"
+                                dayRecord="4"
+                                highTasks="2"
+                                medTasks="2"
+                                lowTasks="1"
                             />
                         </div>
                     </Fade>
